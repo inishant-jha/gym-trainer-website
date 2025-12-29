@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium BMR & TDEE Calculator | Gym Trainer Pro</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+     <!-- Scroll Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+    
+    <!-- Live Chat -->
+    <div class="live-chat">
+        <button class="chat-btn" id="chatBtn">
+               <a href="https://wa.me/917889244517" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+        </button>
+    </div>
+
+        <header>
+            <div class="container">
+            <nav>
+                <a href="#" class="logo">Elite<span>Fit</span></a>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#calculate">BMR and TDEE Calculator</a></li>
+                    <li><a href="index.html">Contact</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+        </header>
+
+        <!--BMR calculator-->
+        <section class="BMR">
+        <div class="calculator-wrapper">
+            <section class="input-section">
+                <h2 class="section-title"><i class="fas fa-calculator"></i> Client Information</h2>
+                
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="age">Age</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="age" min="15" max="100" value="30">
+                            <span class="unit-label">years</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Gender</label>
+                        <div class="radio-group">
+                            <label class="radio-option selected" for="male">
+                                <i class="fas fa-mars"></i> Male
+                                <input type="radio" id="male" name="gender" value="male" checked>
+                            </label>
+                            <label class="radio-option" for="female">
+                                <i class="fas fa-venus"></i> Female
+                                <input type="radio" id="female" name="gender" value="female">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="weight">Weight</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="weight" min="30" max="300" value="75">
+                            <span class="unit-label">kg</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="height">Height</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="height" min="100" max="250" value="175">
+                            <span class="unit-label">cm</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label>Activity Level</label>
+                    <div class="activity-levels">
+                        <div class="activity-level selected" data-level="1.2">
+                            <i class="fas fa-couch"></i>
+                            <div class="activity-info">
+                                <div class="activity-name">Sedentary</div>
+                                <div class="activity-desc">Little or no exercise, desk job</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-level" data-level="1.375">
+                            <i class="fas fa-walking"></i>
+                            <div class="activity-info">
+                                <div class="activity-name">Lightly Active</div>
+                                <div class="activity-desc">Light exercise 1-3 days/week</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-level" data-level="1.55">
+                            <i class="fas fa-running"></i>
+                            <div class="activity-info">
+                                <div class="activity-name">Moderately Active</div>
+                                <div class="activity-desc">Moderate exercise 3-5 days/week</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-level" data-level="1.725">
+                            <i class="fas fa-dumbbell"></i>
+                            <div class="activity-info">
+                                <div class="activity-name">Very Active</div>
+                                <div class="activity-desc">Hard exercise 6-7 days/week</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-level" data-level="1.9">
+                            <i class="fas fa-fire"></i>
+                            <div class="activity-info">
+                                <div class="activity-name">Extra Active</div>
+                                <div class="activity-desc">Very hard exercise & physical job</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="calculate-btn" id="calculateBtn">
+                    <i class="fas fa-bolt"></i> Calculate BMR & TDEE
+                </button>
+            </section>
+            
+            <section class="results-section">
+                <h2 class="section-title"><i class="fas fa-chart-line"></i> Results</h2>
+                
+                <div class="results-display">
+                    <div class="result-card">
+                        <div class="result-label">BASAL METABOLIC RATE (BMR)</div>
+                        <div class="result-value" id="bmrResult">1,655</div>
+                        <div class="result-unit">calories/day</div>
+                        <p>Calories needed at complete rest</p>
+                    </div>
+                    
+                    <div class="result-card highlight">
+                        <div class="result-label">TOTAL DAILY ENERGY EXPENDITURE (TDEE)</div>
+                        <div class="result-value" id="tdeeResult">2,152</div>
+                        <div class="result-unit">calories/day</div>
+                        <p>Calories needed with activity</p>
+                    </div>
+                </div>
+                
+                <div class="calorie-breakdown">
+                    <h3 class="breakdown-title"><i class="fas fa-utensils"></i> Calorie Goals</h3>
+                    
+                    <div class="breakdown-grid">
+                        <div class="breakdown-card">
+                            <div class="goal">Weight Loss</div>
+                            <div class="calories" id="lossCalories">1,722</div>
+                            <div class="description">20% deficit</div>
+                        </div>
+                        
+                        <div class="breakdown-card">
+                            <div class="goal">Mild Loss</div>
+                            <div class="calories" id="mildLossCalories">1,936</div>
+                            <div class="description">10% deficit</div>
+                        </div>
+                        
+                        <div class="breakdown-card">
+                            <div class="goal">Maintenance</div>
+                            <div class="calories" id="maintainCalories">2,152</div>
+                            <div class="description">Current TDEE</div>
+                        </div>
+                        
+                        <div class="breakdown-card">
+                            <div class="goal">Weight Gain</div>
+                            <div class="calories" id="gainCalories">2,582</div>
+                            <div class="description">20% surplus</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <section class="info-section">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> Understanding BMR & TDEE</h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3><i class="fas fa-heartbeat"></i> What is BMR?</h3>
+                    <p>Basal Metabolic Rate (BMR) is the number of calories your body needs to accomplish its most basic (basal) life-sustaining functions at complete rest. This includes breathing, circulation, cell production, and nutrient processing.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-burn"></i> What is TDEE?</h3>
+                    <p>Total Daily Energy Expenditure (TDEE) is an estimate of how many calories you burn per day when exercise is taken into account. It's calculated by multiplying your BMR by your activity level multiplier.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-calculator"></i> How It's Calculated</h3>
+                    <p>We use the Mifflin-St Jeor Equation, which is considered the most accurate BMR formula for adults:</p>
+                    <p><strong>Men:</strong> BMR = 10 × weight(kg) + 6.25 × height(cm) - 5 × age(y) + 5</p>
+                    <p><strong>Women:</strong> BMR = 10 × weight(kg) + 6.25 × height(cm) - 5 × age(y) - 161</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="disclaimer">
+            <i class="fas fa-exclamation-triangle"></i> <strong>Disclaimer:</strong> This calculator provides estimates only. Individual results may vary based on factors like genetics, muscle mass, and medical conditions. Always consult with a healthcare professional before making significant changes to your diet or exercise routine.
+        </div>
+        </section>
+
+        <footer>
+            <p>Gym Trainer Pro BMR & TDEE Calculator &copy; <span id="currentYear">2025</span> | Premium Fitness Tool</p>
+            <p><i class="fas fa-envelope"></i> support@gymtrainerpro.com | <i class="fas fa-phone"></i> 1-800-FIT-PRO</p>
+        </footer>
+       
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+    // Set current year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Variables to track selections
+    let selectedGender = 'male';
+    let selectedActivity = 1.2;
+    
+    // Gender selection
+    const genderOptions = document.querySelectorAll('.radio-option');
+    genderOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            genderOptions.forEach(opt => opt.classList.remove('selected'));
+            this.classList.add('selected');
+            selectedGender = this.querySelector('input').value;
+        });
+    });
+    
+    // Activity level selection
+    const activityLevels = document.querySelectorAll('.activity-level');
+    
+    activityLevels.forEach(level => {
+        level.addEventListener('click', function() {
+            activityLevels.forEach(l => l.classList.remove('selected'));
+            this.classList.add('selected');
+            selectedActivity = parseFloat(this.getAttribute('data-level'));
+        });
+    });
+    
+    // Calculate button click handler
+    document.getElementById('calculateBtn').addEventListener('click', calculateResults);
+    
+    function calculateResults() {
+        // Get input values
+        const age = parseInt(document.getElementById('age').value);
+        const weight = parseFloat(document.getElementById('weight').value);
+        const height = parseFloat(document.getElementById('height').value);
+        
+        // Validate inputs
+        if (!age || age < 15 || age > 100) {
+            alert('Please enter a valid age between 15 and 100 years.');
+            return;
+        }
+        
+        if (!weight || weight < 30 || weight > 300) {
+            alert('Please enter a valid weight between 30 and 300 kg.');
+            return;
+        }
+        
+        if (!height || height < 100 || height > 250) {
+            alert('Please enter a valid height between 100 and 250 cm.');
+            return;
+        }
+        
+        // Calculate BMR using Mifflin-St Jeor Equation
+        let bmr;
+        if (selectedGender === 'male') {
+            bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+        } else {
+            bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+        }
+        
+        // Calculate TDEE
+        const tdee = bmr * selectedActivity;
+        
+        // Update results with formatting
+        document.getElementById('bmrResult').textContent = formatNumber(bmr);
+        document.getElementById('tdeeResult').textContent = formatNumber(tdee);
+        
+        // Calculate calorie goals
+        document.getElementById('lossCalories').textContent = formatNumber(tdee * 0.8);
+        document.getElementById('mildLossCalories').textContent = formatNumber(tdee * 0.9);
+        document.getElementById('maintainCalories').textContent = formatNumber(tdee);
+        document.getElementById('gainCalories').textContent = formatNumber(tdee * 1.2);
+        
+        // Add visual feedback for calculation
+        const resultsSection = document.querySelector('.results-section');
+        resultsSection.style.animation = 'none';
+        setTimeout(() => {
+            resultsSection.style.animation = 'highlight 0.5s ease';
+        }, 10);
+        
+        // Button animation
+        const calculateBtn = document.getElementById('calculateBtn');
+        calculateBtn.innerHTML = '<i class="fas fa-check"></i> Calculated!';
+        calculateBtn.style.background = 'linear-gradient(to right, #00b894, #00a085)';
+        
+        setTimeout(() => {
+            calculateBtn.innerHTML = '<i class="fas fa-bolt"></i> Calculate BMR & TDEE';
+            calculateBtn.style.background = 'var(--primary)';
+        }, 1500);
+    }
+    
+    function formatNumber(num) {
+        return Math.round(num).toLocaleString();
+    }
+    
+    // Add keyboard shortcut for calculate button
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && e.key === 'Enter') {
+            calculateResults();
+        }
+    });
+    
+    // Add CSS animation for results highlight
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes highlight {
+            0% { box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 184, 148, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 184, 148, 0); }
+        }
+        
+        .results-section {
+            transition: all 0.3s ease;
+        }
+        
+        .calculate-btn:active {
+            transform: scale(0.98);
+        }
+    `;
+    document.head.appendChild(style);
+});
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

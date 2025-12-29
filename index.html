@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteFit | Professional Gym Training</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+    
+    <!-- Live Chat -->
+    <div class="live-chat">
+        <button class="chat-btn" id="chatBtn">
+               <a href="https://wa.me/917889244517" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+        </button>
+    </div>
+    
+     <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Elite<span>Fit</span></a>
+                
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                     <li><a href="#transformations">Transformations</a></li>
+                    <li><a href="#pricing">Programs</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="calculate.html">BMR and TDEE calculator</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your Body, Transform Your Life</h1>
+                <p>Professional personal training designed to help you achieve your fitness goals with customized workout plans and nutrition guidance.</p>
+                <a href="#contact" class="btn">Start Your Journey Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Coach Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Your Coach</h2>
+            </div>
+            
+            <div class="about-content fade-in">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Z3ltfGVufDB8fDB8fHww" alt="Coach Alex Johnson">
+                </div>
+                
+                <div class="about-text">
+                    <h3>Alex Johnson</h3>
+                    <p>Certified personal trainer with over 10 years of experience helping clients achieve their fitness goals. Specializing in strength training, weight loss, and athletic performance enhancement.</p>
+                    <p>My philosophy is that fitness should be sustainable and enjoyable. I create personalized programs that fit your lifestyle while delivering real results.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h4>500+</h4>
+                            <p>Clients Transformed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>10+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>15</h4>
+                            <p>Certifications</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Services</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Personal Training</h3>
+                    <p>One-on-one sessions tailored to your specific goals, fitness level, and preferences with constant guidance and motivation.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Nutrition Planning</h3>
+                    <p>Customized meal plans designed to complement your training regimen and help you achieve optimal results.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Group Classes</h3>
+                    <p>Dynamic group workouts that combine strength, cardio, and functional training in a motivating environment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Transformation Section with Sliders -->
+    <section id="transformations" class="transformations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Transformations</h2>
+                <p>Drag the slider on each image to see before and after results</p>
+            </div>
+            
+            <div class="transformations-grid">
+                <div class="transformation-card fade-in">
+                    <div class="transformation-slider-container" id="slider1">
+                        <div class="transformation-slider-image transformation-slider-before"></div>
+                        <div class="transformation-slider-image transformation-slider-after"></div>
+                        <div class="transformation-slider-handle"></div>
+                        <div class="transformation-slider-label transformation-slider-label-before">Before</div>
+                        <div class="transformation-slider-label transformation-slider-label-after">After</div>
+                    </div>
+                    <div class="transformation-info">
+                        <h4>James - 12 Week Transformation</h4>
+                        <p>Lost 28lbs of fat while gaining lean muscle through customized strength training and nutrition plan.</p>
+                    </div>
+                </div>
+                
+                <div class="transformation-card fade-in">
+                    <div class="transformation-slider-container" id="slider2">
+                        <div class="transformation-slider-image transformation-slider-before" style="background-image: url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                        <div class="transformation-slider-image transformation-slider-after" style="background-image: url('https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                        <div class="transformation-slider-handle"></div>
+                        <div class="transformation-slider-label transformation-slider-label-before">Before</div>
+                        <div class="transformation-slider-label transformation-slider-label-after">After</div>
+                    </div>
+                    <div class="transformation-info">
+                        <h4>Lisa - 6 Month Journey</h4>
+                        <p>Went from beginner to competing in her first fitness competition with guided training and diet coaching.</p>
+                    </div>
+                </div>
+                
+                <div class="transformation-card fade-in">
+                    <div class="transformation-slider-container" id="slider3">
+                        <div class="transformation-slider-image transformation-slider-before" style="background-image: url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                        <div class="transformation-slider-image transformation-slider-after" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')"></div>
+                        <div class="transformation-slider-handle"></div>
+                        <div class="transformation-slider-label transformation-slider-label-before">Before</div>
+                        <div class="transformation-slider-label transformation-slider-label-after">After</div>
+                    </div>
+                    <div class="transformation-info">
+                        <h4>Robert - Strength Focus</h4>
+                        <p>Increased bench press by 80lbs and deadlift by 120lbs in 8 months with targeted strength programming.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs/Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Programs & Pricing</h2>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in">
+                    <h3>Basic Plan</h3>
+                    <div class="price">$49<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li>2 Training Sessions per Week</li>
+                        <li>Basic Workout Plan</li>
+                        <li>Email Support</li>
+                        <li>Progress Tracking</li>
+                    </ul>
+                    <a href="#contact" class="btn">Get Started</a>
+                </div>
+                
+                <div class="pricing-card popular fade-in">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Pro Plan</h3>
+                    <div class="price">$89<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li>4 Training Sessions per Week</li>
+                        <li>Customized Workout Plan</li>
+                        <li>Nutrition Guidance</li>
+                        <li>24/7 Support</li>
+                        <li>Weekly Check-ins</li>
+                    </ul>
+                    <a href="#contact" class="btn">Get Started</a>
+                </div>
+                
+                <div class="pricing-card fade-in">
+                    <h3>Elite Plan</h3>
+                    <div class="price">$149<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li>Unlimited Training Sessions</li>
+                        <li>Fully Customized Program</li>
+                        <li>Detailed Nutrition Plan</li>
+                        <li>Priority Support</li>
+                        <li>Bi-weekly Assessments</li>
+                    </ul>
+                    <a href="#contact" class="btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial active">
+                    <div class="client-img">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Michael">
+                    </div>
+                    <p>"Training with Alex completely changed my life. I lost 40 pounds in 5 months and gained so much confidence. His approach is sustainable and effective."</p>
+                    <h4>Michael Rodriguez</h4>
+                    <p>Lost 40 lbs</p>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Sarah">
+                    </div>
+                    <p>"As a busy professional, I needed efficient workouts. Alex created a program that fits my schedule and delivers results. I've never been stronger!"</p>
+                    <h4>Sarah Johnson</h4>
+                    <p>Gained 15lbs Muscle</p>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="David">
+                    </div>
+                    <p>"The nutrition guidance was a game-changer. Combined with the workouts, I achieved my goal of running a marathon. Alex's expertise is unmatched."</p>
+                    <h4>David Chen</h4>
+                    <p>Marathon Finisher</p>
+                </div>
+                
+                <div class="testimonial-controls">
+                    <button class="control-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="control-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h4>How often should I train?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>It depends on your goals and current fitness level. For beginners, I recommend 2-3 times per week. More advanced clients typically train 4-5 times weekly. We'll determine the optimal frequency during your initial assessment.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h4>Do I need gym equipment at home?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Not necessarily. I can create effective bodyweight workouts that require minimal equipment. For more advanced training, some basic equipment like dumbbells or resistance bands is helpful but not required from day one.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h4>How quickly will I see results?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most clients notice improvements in energy and strength within 2-3 weeks. Visible body changes typically appear after 4-6 weeks of consistent training and proper nutrition. Results vary based on individual factors and commitment.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h4>Can you help with nutrition?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Nutrition is 70% of the results. I provide customized meal plans and nutritional guidance tailored to your goals, dietary preferences, and lifestyle. This is included in all premium training packages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-form fade-in">
+                    <h3>Start Your Fitness Journey</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Your Phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="goal">Fitness Goal</label>
+                            <select id="goal" class="form-control" required>
+                                <option value="">Select Your Goal</option>
+                                <option value="weight-loss">Weight Loss</option>
+                                <option value="muscle-gain">Muscle Gain</option>
+                                <option value="strength">Strength Training</option>
+                                <option value="endurance">Endurance</option>
+                                <option value="general">General Fitness</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" rows="5" placeholder="Tell me about your fitness journey..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                        <a href="https://wa.me/917889244517" class="btn whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                    </form>
+                </div>
+                
+                <div class="contact-info fade-in">
+                    <h3>Contact Information</h3>
+                    <p>Ready to transform your body and life? Get in touch to schedule your first consultation.</p>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>123 Fitness Street, Gym City, GC 10001</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>(123) 456-7890</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>alex@elitefit.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Mon-Fri: 6:00 AM - 9:00 PM</p>
+                            <p>Sat: 8:00 AM - 4:00 PM</p>
+                            <p>Sun: 9:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>EliteFit</h3>
+                    <p>Professional personal training to help you achieve your fitness goals and transform your life.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Coach</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#pricing">Programs & Pricing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Personal Training</a></li>
+                        <li><a href="#services">Nutrition Planning</a></li>
+                        <li><a href="#services">Group Classes</a></li>
+                        <li><a href="#pricing">Online Coaching</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 EliteFit. All rights reserved. Designed for Gym Trainer Alex Johnson</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
