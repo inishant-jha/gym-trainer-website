@@ -99,46 +99,42 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         
         // Form submission
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const goal = document.getElementById('goal').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-              // 📩 WhatsApp message format (professional)
-                   const whatsappMessage = 
-                  `New Gym Enquiry 💪
-
-                   Name: ${name}
-                   Phone: ${phone}
-                   Goal: ${goal}
-                   E-mail: ${email}
-                   Message: ${message}`;
-
-    // 🔗 Encode message
-    const encodedMessage = encodeURIComponent(whatsappMessage);
-
-   // Whatsapp No.
-    const whatsappNumber = "917889244517"; 
-
-    // 🚀 WhatsApp redirect
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-    window.open(whatsappURL, "_blank");
-            
-            
-            // For demo purposes, we'll just show an alert
-            alert(`Thank you ${name}! Your message has been sent. We'll contact you at ${email} to discuss your ${goal} goals.`);
-            
-            // Reset form
-            contactForm.reset();
-        });
         
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const submitBtn = this.querySelector("button[type='submit']");
+  submitBtn.disabled = true;
+  submitBtn.innerText = "Sending...";
+
+  fetch("https://script.google.com/macros/s/AKfycbwwzoin9EY8oLn_aTK9wQCGr91j_wk_LwmBhNsEyxapQ0rHGoCmhLRrRR7vFQgvRGmf/exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      phoneNo: document.getElementById("phone").value,
+      goal: document.getElementById("goal").value,
+      message: document.getElementById("message").value,
+    }),
+  })
+    .then(() => {
+      alert("✅ Message sent successfully!");
+      document.getElementById("contactForm").reset();
+    })
+    .catch(() => {
+      alert("❌ Something went wrong. Try again!");
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.innerText = "Send Message";
+    });
+});
+
+
         // Fade-in animation on scroll
         const fadeElements = document.querySelectorAll('.fade-in');
         
